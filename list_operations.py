@@ -20,7 +20,7 @@ test_list_operations.py for concrete examples of the expected function behavior.
 
 def head(input_list):
     """Return the first element of the input list."""
-    pass
+    return input_list[0]
 
 def tail(input_list):
     """Return all elements of the input list except the first."""
