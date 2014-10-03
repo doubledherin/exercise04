@@ -121,7 +121,7 @@ def custom_len(input_list):
 # For the next four functions, get clever using slice operations described in the first half
 def custom_append(input_list, value):
     """custom_append(input_list, value) imitates input_list.append(value)"""
-    input_list[custom_len(input_list):] = value
+    input_list[custom_len(input_list):] = [value]
     return input_list
 
 def custom_extend(input_list, values):
@@ -135,10 +135,15 @@ def custom_insert(input_list, index, value):
     """custom_insert(input_list, index, value) imitates
     input_list.insert(index, value)
     """
-    if index >= custom_len(input_list):
-        custom_append(input_list, value)
-    input_list[index] = value
-    return input_list
+
+    sublist1 = input_list[:index]
+    sublist2 = input_list[index:]
+    input_list[:] = sublist1 + [value] + sublist2
+    print input_list
+    # if index >= custom_len(input_list):
+    #     custom_append(input_list, value)
+    # input_list[index] = value
+    # print input_list
     
 
 def custom_remove(input_list, value):
