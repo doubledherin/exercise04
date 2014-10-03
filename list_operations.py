@@ -135,15 +135,12 @@ def custom_insert(input_list, index, value):
     """custom_insert(input_list, index, value) imitates
     input_list.insert(index, value)
     """
-
-    sublist1 = input_list[:index]
-    sublist2 = input_list[index:]
-    input_list[:] = sublist1 + [value] + sublist2
-    print input_list
-    # if index >= custom_len(input_list):
-    #     custom_append(input_list, value)
-    # input_list[index] = value
-    # print input_list
+    input_list[index:index] = [value]
+    
+    #the code below also works
+    # sublist1 = input_list[:index]
+    # sublist2 = input_list[index:]
+    # input_list[:] = sublist1 + [value] + sublist2
     
 
 def custom_remove(input_list, value):
