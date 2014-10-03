@@ -126,7 +126,10 @@ def custom_append(input_list, value):
 
 def custom_extend(input_list, values):
     """custom_extend(input_list, values) imitates input_list.extend(values)"""
-    pass
+    input_list[custom_len(input_list):] = values
+    return input_list
+
+
 
 def custom_insert(input_list, index, value):
     """custom_insert(input_list, index, value) imitates
