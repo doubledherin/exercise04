@@ -189,4 +189,10 @@ def custom_equality(some_list, another_list):
     """custom_equality(some_list, another_list) imitates
     (some_list == another_list)
     """
-    pass
+    if custom_len(some_list) == custom_len(another_list):
+        for someitem in some_list:
+            for another_item in another_list:
+                if someitem != anotheritem:
+                    return False
+        return True
+    return False
