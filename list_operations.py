@@ -135,6 +135,8 @@ def custom_insert(input_list, index, value):
     """custom_insert(input_list, index, value) imitates
     input_list.insert(index, value)
     """
+    if index >= custom_len(input_list):
+        custom_append(input_list, value)
     input_list[index] = value
     return input_list
     
@@ -144,9 +146,7 @@ def custom_remove(input_list, value):
     for i in range(len(input_list)):
         if input_list[i] == value:
             del input_list[i]
-    return input_list
-
-    
+            return input_list
 
 def custom_pop(input_list):
     """custom_pop(input_list) imitates input_list.pop()"""
@@ -156,8 +156,9 @@ def custom_pop(input_list):
 
 def custom_index(input_list, value):
     """custom_index(input_list, value) imitates input_list.index(value)"""
-    x = input_list[value]
-    return x
+    for i in range(len(input_list)):
+        if input_list[i] == value: 
+            return i
 
 def custom_count(input_list, value):
     """custom_count(input_list, value) imitates input_list.count(value)"""
@@ -174,12 +175,6 @@ def custom_reverse(input_list):
         temp = input_list[i]
         input_list[i] = input_list[-i-1]
         input_list[-i-1] = temp
-
-
-    # newlist = []
-    # for i in range(1, len(input_list)+1):
-    #     newlist.append(input_list[-i])
-    # return newlist
 
 def custom_contains(input_list, value):
     """custom_contains(input_list, value) imitates (value in input_list)"""
