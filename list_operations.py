@@ -135,23 +135,33 @@ def custom_insert(input_list, index, value):
     """custom_insert(input_list, index, value) imitates
     input_list.insert(index, value)
     """
-    pass
+    input_list[index] = value
+    return input_list
+    
 
 def custom_remove(input_list, value):
     """custom_remove(input_list, value) imitates input_list.remove(value)"""
-    pass
+    for i in range(len(input_list)):
+        if input_list[i] == value:
+            del input_list[i]
+    return input_list
+
+    
 
 def custom_pop(input_list):
     """custom_pop(input_list) imitates input_list.pop()"""
-    pass
+    x = input_list[-1]
+    del input_list[-1]
+    return x
 
 def custom_index(input_list, value):
     """custom_index(input_list, value) imitates input_list.index(value)"""
-    pass
+    x = input_list[value]
+    return x
 
 def custom_count(input_list, value):
     """custom_count(input_list, value) imitates input_list.count(value)"""
-    pass
+    
 
 def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
