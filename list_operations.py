@@ -161,7 +161,11 @@ def custom_index(input_list, value):
 
 def custom_count(input_list, value):
     """custom_count(input_list, value) imitates input_list.count(value)"""
-    
+    counter = 0
+    for v in input_list: 
+        if v == value:
+            counter +=1
+    return counter
 
 def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
